@@ -32,6 +32,12 @@
 yarn add ffmpeg-kit-react-native
 ```
 
+```
+  // add this to your podFile
+  pod 'ffmpeg-kit-ios-https', :path => '../node_modules/ffmpeg-kit-react-native/binary/ios'
+
+```
+
 #### 2.1 Packages
 
 `FFmpeg` includes built-in encoders for some popular formats. However, there are certain external libraries that needs

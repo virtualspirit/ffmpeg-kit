@@ -34,7 +34,7 @@ yarn add @virtualspirit/ffmpeg-kit-react-native
 
 ```
   // add this to your podFile
-  pod 'ffmpeg-kit-ios-https', :path => '../node_modules/@virtualspirit/ffmpeg-kit-react-native/'
+  pod 'ffmpeg-kit-ios-https', :podspec => '../node_modules/@virtualspirit/ffmpeg-kit-react-native/ffmpeg-kit-ios-https.podspec'
 ```
 
 #### 2.1 Packages

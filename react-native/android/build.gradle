@@ -126,5 +126,5 @@ repositories {
 
 dependencies {
   api 'com.facebook.react:react-native:+'
-  implementation 'com.arthenica:ffmpeg-kit-https:6.0'
+  implementation files('libs/ffmpeg-kit-https-6.0.aar')
 }

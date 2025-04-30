@@ -56,7 +56,9 @@ android {
 repositories {
   mavenCentral()
   google()
-  mavenLocal()
+  flatDir {
+    dirs 'libs'
+  }
 
   def found = false
   def defaultDir = null
@@ -127,5 +129,5 @@ repositories {
 dependencies {
   api 'com.facebook.react:react-native:+'
   implementation 'com.arthenica:smart-exception-java:0.2.1'
-  implementation files('libs/ffmpeg-kit-https-6.0.aar')
+  implementation(name: 'ffmpeg-kit-https-6.0', ext: 'aar')
 }

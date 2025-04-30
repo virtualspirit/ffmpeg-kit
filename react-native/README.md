@@ -32,9 +32,22 @@
 yarn add @virtualspirit/ffmpeg-kit-react-native
 ```
 
+update your podfile with the following lines
+```ruby
+  pod 'ffmpeg-kit-react-native', :podspec => '../node_modules/@virtualspirit/ffmpeg-kit-react-native/ffmpeg-kit-react-native.podspec'
 ```
-  // add this to your podFile
-  pod 'ffmpeg-kit-ios-https', :podspec => '../node_modules/@virtualspirit/ffmpeg-kit-react-native/ffmpeg-kit-ios-https.podspec'
+
+update your `android/build.gradle` file with the following lines
+```
+repositories {
+  flatDir {
+         dirs '../../node_modules/@virtualspirit/ffmpeg-kit-react-native/android/libs'
+     }
+}
+
+dependencies {
+  implementation(name: 'ffmpeg-kit-https-6.0', ext: 'aar')
+}
 ```
 
 #### 2.1 Packages

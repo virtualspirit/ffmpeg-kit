@@ -126,5 +126,6 @@ repositories {
 
 dependencies {
   api 'com.facebook.react:react-native:+'
+  implementation 'com.arthenica:smart-exception-java:0.2.1'
   implementation files('libs/ffmpeg-kit-https-6.0.aar')
 }

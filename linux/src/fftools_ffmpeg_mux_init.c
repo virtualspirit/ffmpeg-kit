@@ -284,27 +284,27 @@ static int enc_stats_init(OutputStream *ost, EncStats *es, int pre,
     static const struct {
         enum EncStatsType  type;
         const char        *str;
-        int                pre_only:1;
-        int                post_only:1;
-        int                need_input_data:1;
+        unsigned int       pre_only:1;
+        unsigned int       post_only:1;
+        unsigned int       need_input_data:1;
     } fmt_specs[] = {
-        { ENC_STATS_FILE_IDX,       "fidx"                      },
-        { ENC_STATS_STREAM_IDX,     "sidx"                      },
-        { ENC_STATS_FRAME_NUM,      "n"                         },
+        { ENC_STATS_FILE_IDX,       "fidx",     0, 0, 0         },
+        { ENC_STATS_STREAM_IDX,     "sidx",     0, 0, 0         },
+        { ENC_STATS_FRAME_NUM,      "n",        0, 0, 0         },
         { ENC_STATS_FRAME_NUM_IN,   "ni",       0, 0, 1         },
-        { ENC_STATS_TIMEBASE,       "tb"                        },
+        { ENC_STATS_TIMEBASE,       "tb",       0, 0, 0         },
         { ENC_STATS_TIMEBASE_IN,    "tbi",      0, 0, 1         },
-        { ENC_STATS_PTS,            "pts"                       },
-        { ENC_STATS_PTS_TIME,       "t"                         },
+        { ENC_STATS_PTS,            "pts",      0, 0, 0         },
+        { ENC_STATS_PTS_TIME,       "t",        0, 0, 0         },
         { ENC_STATS_PTS_IN,         "ptsi",     0, 0, 1         },
         { ENC_STATS_PTS_TIME_IN,    "ti",       0, 0, 1         },
-        { ENC_STATS_DTS,            "dts",      0, 1            },
-        { ENC_STATS_DTS_TIME,       "dt",       0, 1            },
-        { ENC_STATS_SAMPLE_NUM,     "sn",       1               },
-        { ENC_STATS_NB_SAMPLES,     "samp",     1               },
-        { ENC_STATS_PKT_SIZE,       "size",     0, 1            },
-        { ENC_STATS_BITRATE,        "br",       0, 1            },
-        { ENC_STATS_AVG_BITRATE,    "abr",      0, 1            },
+        { ENC_STATS_DTS,            "dts",      0, 1, 0         },
+        { ENC_STATS_DTS_TIME,       "dt",       0, 1, 0         },
+        { ENC_STATS_SAMPLE_NUM,     "sn",       1, 0, 0         },
+        { ENC_STATS_NB_SAMPLES,     "samp",     1, 0, 0         },
+        { ENC_STATS_PKT_SIZE,       "size",     0, 1, 0         },
+        { ENC_STATS_BITRATE,        "br",       0, 1, 0         },
+        { ENC_STATS_AVG_BITRATE,    "abr",      0, 1, 0         },
     };
     const char *next = fmt_spec;
 

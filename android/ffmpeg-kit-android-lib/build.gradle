@@ -1,4 +1,8 @@
-apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.library'
+    id 'com.vanniktech.maven.publish'
+    id 'com.gradleup.nmcp'
+}
 
 android {
     if (project.android.hasProperty("namespace")) {
@@ -9,7 +13,7 @@ android {
 
     defaultConfig {
         minSdk 24
-        targetSdk 33
+        targetSdk 35
         versionCode 240600
         versionName "6.0"
         project.archivesBaseName = "ffmpeg-kit"
@@ -30,7 +34,7 @@ android {
 
     sourceSets {
         main {
-            jniLibs.srcDirs = ["../libs"]
+            jniLibs.srcDirs = ["./src/main/libs"]
         }
     }
 
@@ -41,7 +45,7 @@ android {
         }
     }
 
-
+    
     publishing {
         singleVariant('release') {
             withJavadocJar()
